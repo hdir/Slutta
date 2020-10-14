@@ -1,0 +1,828 @@
+{
+    "BadgeInfoRoyk":
+    [
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Pulsen går ned",
+            "time": "20",
+            "timeUnit": "minutes",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_20_min.png",
+            "imageurlsmall": "badge_20_min.png",
+            "imageurlempty": "badge_20_min_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Det at du har valgt å være røykfri, forsinker hudens aldringsprosess.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "20 minutter ette​r røykeslutt har pulsen gått ned til et normalt nivå. Du begynner også å få igjen varmen i hender og føtter.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Uten røyk slipper du å bekymre deg for de kreftfremkallende stoffene du suger i deg med hver sigarett.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Blodsirkulasjonen bedres",
+            "time": "8",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_8_t.png",
+            "imageurlsmall": "badge_8_t_royk.png",
+            "imageurlempty": "badge_8_t_BLANK.png",
+            "backgroundcolor": "#F2303A",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Nikotin får blodårene til å trekke seg sammen. Kort tid etter røykeslutt vil den sammentrekkende effekten avta.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Karbonmonoksid fra røyken fortrenger ikke lenger oksygenets plass i blodet. Når du ikke røyker, får alle cellene i kroppen dermed mer oksygen.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Risikoen for hjerteinfarkt synker allerede",
+            "time": "24",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_24_t.png",
+            "imageurlsmall": "badge_24_t_royk.png",
+            "imageurlempty": "badge_24_t_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "For hver røyk forkorter du livet med 5-7 minutter. For hver sigarett du ikke tar, forlenger du livet.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Smaks- og luktesansen bedres",
+            "time": "48",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_48_t.png",
+            "imageurlsmall": "badge_48_t_royk.png",
+            "imageurlempty": "badge_48_t_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Smaks- og luktesansen begynner å våkne til liv. Mat og drikke smaker mer og bedre. Du har allerede spart to dagers røykebudsjett. Tenk på hvor mye du sparer på én måned!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Lungekapasiteten øker og kroppen er nikotinfri",
+            "time": "72",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_72_t.png",
+            "imageurlsmall": "badge_72_t_royk.png",
+            "imageurlempty": "badge_72_t_BLANK.png",
+            "backgroundcolor": "#F2303A",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Selv om du ikke har merket forbedringer, har lungekapasiteten din allerede økt.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Det er ikke uvanlig å hoste mer en periode, fordi flimmerhårene som har vært lammet av røyken nå begynner å fungere igjen.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Husk at et røyksug bare varer i noen minutter, og at det fysiske suget blir gradvis mildere og forsvinner i løpet av de nærmeste ukene.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "En uke!",
+            "time": "7",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_1_uke.png",
+            "imageurlsmall": "badge_1_uke.png",
+            "imageurlempty": "badge_1_uke_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "En hel uke uten røyk, det er helt fantastisk. Stå på!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Det kjennes lettere å bevege seg raskt fordi både lungekapasitet og blodsirkulasjon er bedre.",
+            "time": "14",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_2_uker.png",
+            "imageurlsmall": "badge_2_uker_royk.png",
+            "imageurlempty": "badge_2_uker_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Etter røykeslutt har du fått økt blodsirkulasjon i ryggvirvlene og ryggmuskelene, og dermed reduseres risikoen for ryggproblemer.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Huden begynner å få tilbake et friskt, sunt skjær fordi blodsirkulasjonen er blitt bedre.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Er du kvinne, har du fått økt mulighet til å bli gravid om du ønsker det.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "At blodomløpet er bedret, har betydning for ereksjon hos menn.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "3 uker!",
+            "time": "21",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_3_uker.png",
+            "imageurlsmall": "badge_3_uker.png",
+            "imageurlempty": "badge_3_uker_BLANK.png",
+            "backgroundcolor": "#EF3340",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Du er flink! Har du tenkt på alle pengene du sparer, hva med å unne deg noe ekstra i dag?",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "28 røykfrie dager gir fem ganger større sjanse for å slutte for godt!",
+            "time": "28",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_28_dager.png",
+            "imageurlsmall": "badge_28_dager.png",
+            "imageurlempty": "badge_28_dager_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": false,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Du har kommet langt! For hver røykfrie dag som går, vil kroppen din få det bedre.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Husk å minne deg selv på grunnene dine for å slutte å røyke.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Mindre utsatt for luftveis-infeksjoner. Flimmerhårene i halsen kvikner til.",
+            "time": "2",
+            "timeUnit": "months",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_2_mnd_royk.png",
+            "imageurlsmall": "badge_2_mnd_royk.png",
+            "imageurlempty": "badge_2_mnd_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Nå skal flimmerhårene i luftrørene være friskmeldt. De arbeider for fullt med å rense opp i lungene. De fleste har fått mindre slimdannelse, selv om noen får mer hoste i en periode. De som har astma kan få mildere symptomer. Ved kols vil man som røykfri oppleve at utviklingen forsinkes eller stanser.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Skadene som røykingen forårsaket i blodårene, er i gang med å bli reparert. Faren for at du skal rammes av en blodpropp, er mye mindre enn da du røykte.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "3 måneder!",
+            "time": "3",
+            "timeUnit": "months",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_3_mnd.png",
+            "imageurlsmall": "badge_3_mnd.png",
+            "imageurlempty": "badge_3_mnd_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Gratulerer. Har du sjekka hvor mye penger du har spart til nå?",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Ett halvt år!",
+            "time": "6",
+            "timeUnit": "months",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_6_mnd.png",
+            "imageurlsmall": "badge_6_mnd.png",
+            "imageurlempty": "badge_6_mnd_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Gratulerer med 6 måneder uten røyk.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Immunforsvaret styrkes",
+            "time": "1",
+            "timeUnit": "years",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_1_ar_royk.png",
+            "imageurlsmall": "badge_1_ar_royk.png",
+            "imageurlempty": "badge_1_ar_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Siden immunforsvaret har blitt bedre, kan du lettere unngå forkjølelser og andre sykdommer. Risikoen for luftveisinfeksjoner er betraktelig mindre. Ett år etter​ røykeslutt er faren for å få innsnevringer i blodårene og hjerteinfarkt bare halvparten så stor som hvis du hadde fortsatt å røyke.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Du som har røykt en 20-pakning om dagen har gitt deg selv \"ekstra\" tid som tilsvarer om lag 1000 timer som du før brukte på å røyke.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Faren for å utvikle hjertesykdom og hjerneslag er betydelig redusert",
+            "time": "5",
+            "timeUnit": "years",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_5_ar_royk.png",
+            "imageurlsmall": "badge_5_ar_royk.png",
+            "imageurlempty": "badge_5_ar_BLANK.png",
+            "backgroundcolor": "#EF3340",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "5 år etter ​røykeslutt har du samme risiko for å få hjerneblødning som en som ikke røyker. Nå kan celler i et forstadium til kreft få muligheten til å leges.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Risikoen for å utvikle kreft i munn, hals, strupe, urinblære, nyrer, livmorhals og bukspyttkjertel er betraktelig redusert. Ved kreftsykdom er prognosen bedre for røykfrie.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært røykfri i:",
+            "name": "Risikoen for å utvikle lungekreft er halvert og risikoen for mange andre krefttyper fortsetter også å synke de nærmeste årene.",
+            "time": "10",
+            "timeUnit": "years",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_10_ar.png",
+            "imageurlsmall": "badge_10_ar.png",
+            "imageurlempty": "badge_10_ar_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "10 år etter røykeslutt er risikoen for at du skal få lungekreft halvert sammenlignet med om du hadde fortsatt å røyke.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "Helsen er betraktelig forbedret, sammenlignet med om du hadde fortsatt å røyke.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                },
+                {
+                    "Title": "",
+                    "Innertext": "For ikke å snakke om alle pengene du har spart!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        }
+    ],
+
+    "BadgeInfoSnus":
+    [
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "Pulsen går ned",
+            "time": "20",
+            "timeUnit": "minutes",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_20_min.png",
+            "imageurlsmall": "badge_20_min.png",
+            "imageurlempty": "badge_20_min_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Når du snuser fører nikotinen til at pulsen din øker og blodårene trekker seg sammen. Allerede nå er pulsen din gått ned.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "En arbeidsdag uten snus",
+            "time": "8",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_8_t_snus.png",
+            "imageurlsmall": "badge_8_t_snus.png",
+            "imageurlempty": "badge_8_t_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "For hver snus du ikke tar sparer du kroppen for en mengde giftige kjemikalier.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "1 døgn",
+            "time": "24",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_24_t_snus.png",
+            "imageurlsmall": "badge_24_t_snus.png",
+            "imageurlempty": "badge_24_t_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Hurra! Du har vært snusfri i ett døgn. Stå på!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "Penger spart!",
+            "time": "48",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_48_t_snus.png",
+            "imageurlsmall": "badge_48_t_snus.png",
+            "imageurlempty": "badge_48_t_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "2 døgn og du har allerede begynt å spare penger. Et lite tips. Sett av pengene du ville brukt på snus og se hvor fort det øker.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "Nikotinfri",
+            "time": "72",
+            "timeUnit": "hours",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_72_t_snus.png",
+            "imageurlsmall": "badge_72_t_snus.png",
+            "imageurlempty": "badge_72_t_BLANK.png",
+            "backgroundcolor": "#F2303A",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Nikotinen er nå ute av kroppen. Gratulerer!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "En uke!",
+            "time": "7",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_1_uke.png",
+            "imageurlsmall": "badge_1_uke.png",
+            "imageurlempty": "badge_1_uke_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "En hel uke uten snus, det er helt fantastisk.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "2 uker",
+            "time": "14",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_2_uker_snus.png",
+            "imageurlsmall": "badge_2_uker_snus.png",
+            "imageurlempty": "badge_2_uker_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Du og kroppen din fortjener en applaus. Du er på vei ut av avhengigheten. Stå på!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "3 uker",
+            "time": "21",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_3_uker.png",
+            "imageurlsmall": "badge_3_uker.png",
+            "imageurlempty": "badge_3_uker_BLANK.png",
+            "backgroundcolor": "#EF3340",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Hurra! Tre uker uten snus!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "28 dager",
+            "time": "28",
+            "timeUnit": "days",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_28_dager.png",
+            "imageurlsmall": "badge_28_dager.png",
+            "imageurlempty": "badge_28_dager_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": false,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Nå har du nådd en magisk grense. Forskning innen røykeslutt viser at man etter 28 dager 5-dobler sjansen for å klare det! Stå på!!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "2 måneder!",
+            "time": "2",
+            "timeUnit": "months",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_2_mnd_snus.png",
+            "imageurlsmall": "badge_2_mnd_snus.png",
+            "imageurlempty": "badge_2_mnd_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Gratulerer! 2 måneder uten snus. Det kan feires.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "3 måneder!",
+            "time": "3",
+            "timeUnit": "months",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_3_mnd.png",
+            "imageurlsmall": "badge_3_mnd.png",
+            "imageurlempty": "badge_3_mnd_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Hurra for deg og hurra for lommeboka. Har du sjekka hvor mye du har spart?",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "Halvt år snusfri!",
+            "time": "6",
+            "timeUnit": "months",
+            "timeMs": "",
+            "type": "prestasjon",
+            "imageurl": "badge_6_mnd.png",
+            "imageurlsmall": "badge_6_mnd.png",
+            "imageurlempty": "badge_6_mnd_BLANK.png",
+            "backgroundcolor": "#1A5C6A",
+            "buttoncolor": "#054352",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Nå har du spart kroppen din for giftige kjemikalier i et halvt år. Utrolig bra jobba! Føles det ikke godt å være kvitt avhengigheten?",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "1 år!",
+            "time": "1",
+            "timeUnit": "years",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_1_ar_snus.png",
+            "imageurlsmall": "badge_1_ar_snus.png",
+            "imageurlempty": "badge_1_ar_BLANK.png",
+            "backgroundcolor": "#99000F",
+            "buttoncolor": "#F2303A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "Føles det ikke fantastisk å slippe avhengigheten? Gratulerer med ettårsjubileum.",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "5 år!",
+            "time": "5",
+            "timeUnit": "years",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_5_ar_snus.png",
+            "imageurlsmall": "badge_5_ar_snus.png",
+            "imageurlempty": "badge_5_ar_BLANK.png",
+            "backgroundcolor": "#EF3340",
+            "buttoncolor": "#A11723",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "5 år uten snus - gratulerer!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        },
+        {
+            "stoff": "Jeg har vært snusfri i:",
+            "name": "10 år!",
+            "time": "10",
+            "timeUnit": "years",
+            "timeMs": "",
+            "type": "helsegevinster",
+            "imageurl": "badge_10_ar.png",
+            "imageurlsmall": "badge_10_ar.png",
+            "imageurlempty": "badge_10_ar_BLANK.png",
+            "backgroundcolor": "#0A2C33",
+            "buttoncolor": "#1A5C6A",
+            "enabled": true,
+            "prevTitle": "",
+            "TextNodes": [
+                {
+                    "Title": "",
+                    "Innertext": "10 år uten snus - gratulerer!",
+                    "Listitems": [],
+                    "DottedListitems": [],
+                    "NumberedListitems": []
+                }
+            ]
+        }
+    ]
+}

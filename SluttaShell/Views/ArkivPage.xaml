@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SluttaShell.Views.ArkivPage"
+    Shell.NavBarIsVisible="False"
+    NavigationPage.HasNavigationBar="false"
+    >
+   <ContentPage.Content>
+        <StackLayout Padding="15,15,15,10">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+             <AbsoluteLayout>
+                 <Image Source="back_arrow_graa.png"                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnToProfil" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                 </Image>
+                 <Label Text="Arkiv"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Padding="10, 0, 10, 10"
+                        FontSize="20"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,150,55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+            <Frame  HorizontalOptions="Center"
+                    x:Name="NotifToggle"
+                    BackgroundColor="#E0E0E0"
+                    CornerRadius="3"  
+                    OutlineColor="Transparent"
+                    Margin="0,0,0,20"
+                    HasShadow="False"
+                    Padding="3">
+                <StackLayout    Orientation="Horizontal"
+                                Padding="0"
+                                >
+                    <Button Text="Røykfri"
+                            FontSize="18"
+                            x:Name="ToggleToRoyk"
+                            FontFamily="{StaticResource Roboto-Regular}"
+                            TextColor="#4B4B4B"
+                            CornerRadius="4"
+                            Padding="14,0,14,0"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#CCCCCC"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            HeightRequest="38"
+                            Clicked="ToggleArkivToRoyk" />
+                    <Button Text="Snusfri"
+                            x:Name="ToggleToSnus"
+                            FontSize="18"
+                            FontFamily="{StaticResource Roboto-Regular}"
+                            TextColor="#4B4B4B"
+                            CornerRadius="4"
+                            Padding="14,0,14,0"
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#CCCCCC"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            HeightRequest="38"
+                            Clicked="ToggleArkivToSnus" />
+                </StackLayout>
+            </Frame>
+            
+            <CollectionView x:Name="SmokeNotifs"
+                            ItemsSource="{Binding PastSmokeNotifs}"
+                            ItemsLayout="VerticalList"
+                            >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="1" Orientation="Vertical" HorizontalOptions="StartAndExpand">                                
+                            <Label Text="{Binding DayPretty}" FontFamily="{StaticResource Roboto-Medium}" FontSize="20" Padding="0, 0, 0, 20" />
+                            <Label Text="{Binding Messages}" />
+                            <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="#C6CBCC" HeightRequest="1" Margin="0, 20, 0, 20"
+                                VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+            </CollectionView>
+            <CollectionView x:Name="SnusNotifs"
+                            ItemsSource="{Binding PastSnusNotifs}"
+                            ItemsLayout="VerticalList"
+                            >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="1" Orientation="Vertical" HorizontalOptions="StartAndExpand">                                
+                            <Label Text="{Binding DayPretty}" FontFamily="{StaticResource Roboto-Medium}" FontSize="20" Padding="0, 0, 0, 20" />
+                            <Label Text="{Binding Messages}" />
+                            <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="#C6CBCC" HeightRequest="1" Margin="0, 20, 0, 20"
+                                VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

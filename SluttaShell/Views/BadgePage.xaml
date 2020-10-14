@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="SluttaShell.Views.BadgePage"
+             BackgroundColor="{Binding backgroundcolor}"
+             NavigationPage.HasNavigationBar="false"
+             >
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="15,15,15,10">
+             <AbsoluteLayout>
+                 <Image Source="back_arrow.png"                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnHome" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                 </Image>
+             </AbsoluteLayout>
+            <StackLayout Padding="70,0,70,0">
+                <Image Source="{Binding imageurlsmall}" Aspect="AspectFit"
+                            AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+                            AbsoluteLayout.LayoutFlags="All">
+                </Image>   
+            </StackLayout>
+            <!--<Label Text="{Binding name}" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" TextColor="White"  Padding="10, 10, 10, 0" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"></Label>-->
+            
+            <CollectionView
+                ItemsSource="{Binding TextNodes}"
+                ItemsLayout="VerticalList"
+                Margin="10, 0, 10, 10">
+                <CollectionView.Header>
+                    <StackLayout>
+                        <Label Margin="0,0,0,0"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="StartAndExpand"
+                               Text="{Binding name}"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="28"
+                               FontFamily="{StaticResource Slutta-Medium}"
+                               />
+                    </StackLayout>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+                        <StackLayout Margin="1" Orientation="Vertical" HorizontalOptions="StartAndExpand">                                
+                            <Label Text="{Binding Innertext}" HorizontalOptions="Center" FontSize="16" TextColor="White" Padding="0,7,0,7"></Label>
+                        </StackLayout>                       
+                            
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Del dette"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Fill"
+                            TextColor="#ffffff" FontSize="24"
+                            FontFamily="{StaticResource Roboto-Regular}"
+                            BackgroundColor="{Binding buttoncolor}"
+                            CornerRadius="0"
+                            Padding="15"
+                            Margin="10"
+                            Clicked="Share_stats" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

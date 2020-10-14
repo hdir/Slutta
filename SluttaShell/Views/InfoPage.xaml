@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="SluttaShell.Views.InfoPage"
+             BackgroundColor="#f0f0f0"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:Effects="clr-namespace:SluttaShell.Controls"
+             >
+    <ContentPage.Content>
+
+        <StackLayout Padding="15,45,15,10">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+             <AbsoluteLayout>
+                 <Image Source="back_arrow_graa.png"                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnToProfil" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                 <Label Text="Info"
+                   HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                   Padding="10, 0, 10, 10"
+                   FontSize="20"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,150,55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+            <Label Text="Ønsker du ikke å motta pushmeldinger lenger? Dette kan skrus av i telefonens innstillinger." HorizontalOptions="Center" Padding="0,10,0,10" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"></Label>
+            <Label Text="Husk at meldingene du får er ment å være motiverende. Vi anbefaler derfor at varsling er på." HorizontalOptions="Center" Padding="0,10,0,40" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"></Label>
+             
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

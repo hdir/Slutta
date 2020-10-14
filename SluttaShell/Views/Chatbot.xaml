@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.Chatbot"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#f0f0f0"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:Effects="clr-namespace:SluttaShell.Controls"
+             >
+    <ContentPage.Content>
+
+       
+        <StackLayout Padding="15,15,15,10">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <AbsoluteLayout>
+                 <Image Source="back_arrow_graa.png"
+                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnToProfil" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                 <Label Text="Chatbot"
+                   HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                   Padding="10, 0, 10, 10"
+                   FontSize="20"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,290,55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+
+            <ScrollView>
+                <StackLayout Padding="15,25,15,10">
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="Chatbot"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Ønsker du litt ekstra hjelp og støtte på veien mot et snus- eller røykfritt liv? Åpne Messenger-appen din på telefonen og søk etter Slutta – din røykeslutt. Den vil vises under “Bedrifter” i søkeresultatet. Trykk på “kom i gang” og følg instruksjonene."
+                           ></Label>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

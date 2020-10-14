@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace:SluttaShell.Views"
+       Title="Slutta" x:Class="SluttaShell.AppShell"
+       >
+    <!-- 
+        Styles and Resources
+    -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#ffffff</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#F3F3F3" />
+                <Setter Property="Shell.ForegroundColor" Value="#f6303e" />
+                <Setter Property="Shell.TitleColor" Value="#333" />
+                <Setter Property="Shell.DisabledColor" Value="#999" />
+                <Setter Property="Shell.UnselectedColor" Value="#ccc" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#1A5C6A" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#ffffff" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#ffffff" />
+                <Setter Property="Shell.TabBarTitleColor" Value="#9DEEFF" />
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Navigation Bar - links to pages at bottom of shell -->
+    <TabBar>
+        <Tab Title="Hjem"
+             Route="home"
+             Icon="tabhjem">
+            <ShellContent>
+                <local:HomePage/>
+            </ShellContent>
+        </Tab>
+         <Tab Title="Hjelp"
+              Route="help"
+             Icon="tabhjelp">
+            <ShellContent>
+                <local:HelpPage/>
+            </ShellContent>
+        </Tab>
+         <Tab Title="Verktøy"
+             Icon="tabtools">
+            <ShellContent>
+                <local:ToolsPage/>
+            </ShellContent>
+        </Tab>
+         <Tab Title="Profil"
+              Route="profile"
+             Icon="tabprofil">
+            <ShellContent>
+                <local:SettingsPage/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>

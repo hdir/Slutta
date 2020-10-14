@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.SnusHelsegevinsterPage"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#f0f0f0"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:Effects="clr-namespace:SluttaShell.Controls"
+             >
+    <ContentPage.Content>
+
+       
+        <StackLayout Padding="15,15,15,10">
+
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <AbsoluteLayout>
+                 <Image Source="back_arrow_graa.png"
+                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnToProfil" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                 <Label Text="Helsegevinster ved snusslutt"
+                   HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                   Padding="22, 0, 10, 10"
+                   FontSize="20"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,290,55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+
+            <ScrollView>
+                <StackLayout Padding="15,25,15,10">
+                     
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Avhengighet"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Når du er snusfri, har du kvittet deg med et sterkt avhengighetsskapende produkt."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: Nikotin i snus tas opp i blodet gjennom slimhinnene i munnen. Kort tid etter at snusen er i munnen, når nikotinet hjernen. Her frigjøres stoffer i belønningssystemet. Dette gir en beroligende, men samtidig stimulerende effekt. Mangel på nikotintilførsel vil raskt gi abstinenssymptomer. Det er kombinasjonen av disse virkningene som skaper avhengighet."
+                           ></Label>
+                    
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Tenner"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Når du ikke snuser, slipper du å bekymre deg over misfarging av tennene pga. snus."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: På tennene er det mikroskopiske sprekker og uregelmessigheter som snusen setter seg i. I tillegg kan tannkjøttet i området der snusen plasseres, trekke seg tilbake og gi lange tannhalser. Dette øker risikoen for ising og hull. I verste fall kan det føre til at tennene dine løsner."
+                           ></Label>
+                    
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Munnen"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Når du ikke snuser, slipper du å irritere slimhinnene i munnen."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: Snus kan føre til endringer i munnslimhinnen der snusen plasseres. Noen endringer kan gå tilbake, andre ikke. Ved langvarig bruk kan det oppstå en fordypning som kalles snuslomme."
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Helse"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Når du ikke snuser, slipper du å bekymre deg for snusens negative virkning på helsa."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: EU og WHO har klassifisert snus som kreftfremkallende. Bukspyttkjertel og spiserør er mest utsatt. Snus gir også økt dødsrisiko ved hjerteinfarkt."
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Fysisk trening"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Når du ikke snuser, slipper du å få økt puls og blodtrykk pga. snusen."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: Når blodtrykker stiger, må hjertet arbeide hardere. En norsk studie viser at snus øker risiko for skader på muskler og skjelettet. Det er også mulig at skader i vev og muskler heles saktere når du bruker snus."
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Overvekt"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Når du ikke snuser, slipper du å bekymre deg for endringer i stoffskiftet."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: Det er en mulig sammenheng mellom snusing og utvikling av type 2 diabetes og overvekt på grunn av endringer i stoffskiftet."
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Svangerskap"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Snusing i svangerskapet gir mange av de samme effektene på fosteret som røyking."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Fakta: Snus inneholder nikotin som fører til at blodårene trekker seg sammen. Det gir dårligere blodtilstrømning til fosteret gjennom morkaken. Bruk av snus øker risikoen for dødfødsel og for tidlig fødsel. Snusing gir også lavere fødselsvekt hos barnet og øker risikoen for pustestans og leppe- og ganemisdannelser."
+                           ></Label>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

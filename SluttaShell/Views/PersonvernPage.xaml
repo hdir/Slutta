@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.PersonvernPage"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#f0f0f0"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:Effects="clr-namespace:SluttaShell.Controls"
+             >
+    <ContentPage.Content>
+
+       
+        <StackLayout Padding="15,15,15,10">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <AbsoluteLayout>
+                 <Image Source="back_arrow_graa.png"
+                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnToProfil" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                 <Label Text="Personvern"
+                   HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                   Padding="10, 0, 10, 10"
+                   FontSize="20"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,150,55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+
+            <ScrollView>
+                <StackLayout Padding="15,45,15,10">
+                     
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="1.0 App-eier (dataeier):"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Helsedirektoratet"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Pb. 220 Skøyen"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="0213 Oslo"
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="2.0 Visualisering av dine sluttedata"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Slutta appen sin kjernefunksjonalitet baserer seg på brukerens innlasting av sluttedato samt antall røyk/snus og prisen av disse. På bakgrunn av disse dataene vil appen automatisk oppdatere antall dager røyk-/snusfri, antall kroner spart samt mengde giftstoffer man har unngått. I tillegg vil vi sende ut motiverende meldinger basert på hvor mange dager du har vært røyk-/snusfri."
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="3.0 Informasjonskapsler"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Som de fleste nettsider og apper har vi informasjonskapsler plassert i Slutta appen. Formålet med disse er å kunne gi en bedre brukeropplevelse basert på hvordan appen brukes. Vi sparer ikke på andre data enn det bruker selv har gitt (sluttedato). Det er ingen personlige data lagret i appen."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="I tillegg benytter vi informasjonskapsler for å effektivisere annonseringen av appen, og måle hvor brukeren kommer fra."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Våre data blir ikke delt med andre tredjepartsaktører utover det vi beskriver under."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="For å analysere bruken av appen benytter vi oss av ulike analyseverktøy som beskrevet i punktene 3.1, 3.2 og 3.3."
+                           ></Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="3.1 Firebase"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Vi benytter Firebase for å måle hvilke deler av appen som brukes. Vi bruker denne innsikten til å oppgradere appen for å gi brukeren et bedre slutteverktøy."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>                               
+                                <Span Text="www.firebase.com"
+                                      TextColor="#207384"
+                                      FontFamily="{StaticResource Roboto-Medium}"
+                                      TextDecorations="None">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                              CommandParameter="http://www.firebase.com" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="3.2 Adform"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Adform er et annonsestyringsverktøy vi bruker for å promotere appen og som gir oss innsikt i hvor brukeren kommer fra."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>                               
+                                <Span Text="www.adform.com"
+                                      TextColor="#207384"
+                                      FontFamily="{StaticResource Roboto-Medium}"
+                                      TextDecorations="None">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                              CommandParameter="http://www.adform.com" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"
+                           Text="3.3 Facebook analytics"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Vi promoterer appen gjennom Facebook. På samme måte som Adform gir Facebook analytics oss innsikt i bruken og nedlasting av appen."
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>                               
+                                <Span Text="www.facebook.com/about/privacy/"
+                                      TextColor="#207384"
+                                      FontFamily="{StaticResource Roboto-Medium}"
+                                      TextDecorations="None">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                              CommandParameter="http://www.facebook.com/about/privacy/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           Text="Har du spørsmål vedrørende personvern eller om denne appen vennligst ta kontakt ved å sende e-post til:"
+                           ></Label>
+                    <!--<Label HorizontalOptions="Start" Padding="0, 0, 0, 5" FontSize="18" FontFamily="{StaticResource Roboto-Regular}" LineHeight="1.2"
+                           >
+                        <Label.FormattedText>
+                            <FormattedString>                
+                                <Span Text="kontaktslutta@helsedir.no"
+                                      TextColor="#207384"
+                                      FontFamily="{StaticResource Roboto-Medium}" 
+                                      TextDecorations="None">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SendEmail" NumberOfTapsRequired="1"
+                                                             
+                                                              CommandParameter="mailto:kontaktslutta@helsedir.no" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>-->
+
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

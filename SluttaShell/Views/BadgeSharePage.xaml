@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.BadgeSharePage"
+             NavigationPage.HasNavigationBar="false"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="15,15,15,10">
+            <Image Source="back_arrow_graa.png" Aspect="AspectFit" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ReturnHome" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <StackLayout Padding="10,0,10,30">
+                <Label Text="Forbereder å dele fremdriften din"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="{StaticResource Slutta-Medium}"
+                       FontSize="26"
+                       />
+            </StackLayout>
+            <Frame BorderColor="#707070" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="StartAndExpand">
+                <StackLayout x:Name="ShareContent"
+                        Padding="0,0,0,10"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        HeightRequest="480"
+                             >
+                    <StackLayout BackgroundColor="#FFFFFF" Padding="10">
+                        <Image Source="sluttalogo"
+                           HorizontalOptions="Center"                           
+                           ></Image>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="{Binding backgroundcolor}">
+                        <Label  Text="{Binding ShareFlavourText}"
+                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                            HorizontalOptions="CenterAndExpand"
+                        />
+                        <Label Text="{Binding stoff}"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="22"
+                                FontFamily="{StaticResource Slutta-Medium}"
+                                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                                HorizontalOptions="CenterAndExpand"
+                        />
+                        <StackLayout Padding="40,20,40,20">
+                            <Image Source="{Binding imageurlsmall}" Aspect="AspectFit"
+                                        AbsoluteLayout.LayoutBounds="0.0, 0.0, 1.0, 1.0"
+                                        AbsoluteLayout.LayoutFlags="All">
+                            </Image>
+                        </StackLayout>
+                            <StackLayout Padding="15,5" BackgroundColor="#ec3645">
+                            <Label TextColor="#FFFFFF" HorizontalOptions="CenterAndExpand" Text="Ønsker du også hjelp til å slutte? Last ned appen." />
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
+

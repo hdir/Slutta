@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" x:Class="SluttaShell.Views.ToolsPage"
+             Title="{Binding Title}"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="false"
+             x:Name="BrowseToolsPage"
+             BackgroundColor="#f3f3f3"
+             >
+
+    <ContentPage.Content>
+        <StackLayout Margin="0,15,0,0">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+            <AbsoluteLayout>
+                <Label Text="Verktøy" HorizontalOptions="Center" Padding="10, 15, 10, 10"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,100,50"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        FontSize="20" FontFamily="{StaticResource Roboto-Medium}"></Label>
+            </AbsoluteLayout>
+            <ScrollView>
+                <StackLayout Margin="7,20,7,0">
+                    <Frame BackgroundColor="#FFFFFF"
+                           Padding="5"
+                           HorizontalOptions="CenterAndExpand"
+                           CornerRadius="4"
+                           HasShadow="False"
+                           >
+                        <Grid Padding="0" VerticalOptions="Start">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="pushmeldingericon" Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   />
+
+                            <Label Text="Push-melding arkiv"  Padding="5,10,0,0"
+                                    FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalOptions="Center" />
+
+                            <Label Text="Tidligere meldinger"
+                                    Padding="5,0,0,10"
+                                    FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                         <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToArkiv"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFFFFF"
+                           Padding="5"
+                           HorizontalOptions="CenterAndExpand"
+                           CornerRadius="4"
+                           HasShadow="False"
+                           >
+                        <Grid Padding="0" VerticalOptions="Start">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="chatboticon" Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   />
+
+                            <Label Text="Chatbot"  Padding="5,10,5,0"
+                                    FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalOptions="Center" />
+
+                            <Label Text="Få hjelp til å slutte av chatboten vår"
+                                    Padding="5,0,0,10"
+                                    FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToChatbotPage" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFFFFF"
+                           Padding="5"
+                           HorizontalOptions="CenterAndExpand"
+                           CornerRadius="4"
+                           HasShadow="False"
+                           IsVisible="{Binding StoffList[0].IsActive}"
+                           >
+                        <Grid Padding="0" VerticalOptions="Start">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                             <Image Source="avhengighetsicon" Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   />
+
+                            <Label Text="Avhengighetstesten"  Padding="5,10,5,0"
+                                    FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalOptions="Center" />
+
+                            <Label Text="Hvor avhengig er du? Test deg selv"
+                                    Padding="5,0,0,10"
+                                    FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                         <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LaunchAvhengighet" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFFFFF"
+                           Padding="5"
+                           HorizontalOptions="CenterAndExpand"
+                           CornerRadius="4"
+                           HasShadow="False"
+                           IsVisible="{Binding StoffList[0].IsActive}"
+                           >
+                        <Grid Padding="0" VerticalOptions="Start">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="helsegevinstericon" Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   />
+
+                            <Label Text="Helsegevinster ved røykeslutt"  Padding="5,10,5,0"
+                                    FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalOptions="Center" />
+
+                            <Label Text="Dette skjer når du kutter røyken"
+                                    Padding="5,0,0,10"
+                                    FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                         <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LaunchRoykesluttgevinster" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFFFFF"
+                           Padding="5"
+                           HorizontalOptions="CenterAndExpand"
+                           CornerRadius="4"
+                           HasShadow="False"
+                           IsVisible="{Binding StoffList[1].IsActive}"
+                           >
+                        <Grid Padding="0" VerticalOptions="Start">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="helsegevinstericon" Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   />
+
+                            <Label Text="Sjekk hva snus inneholder"  Padding="5,10,5,0"
+                                    FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalOptions="Center" />
+
+                            <Label Text="Dette får du i deg når du snuser"
+                                    Padding="5,0,0,10"
+                                    FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                         <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToSnusInnhold" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame BackgroundColor="#FFFFFF"
+                           Padding="5"
+                           HorizontalOptions="CenterAndExpand"
+                           CornerRadius="4"
+                           HasShadow="False"
+                           IsVisible="{Binding StoffList[1].IsActive}"
+                           >
+                        <Grid Padding="0" VerticalOptions="Start">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*" />
+                                <ColumnDefinition Width="80*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="helsegevinstericon" Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   />
+
+                            <Label Text="Helsegevinster ved snusslutt"  Padding="5,10,5,0"
+                                    FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalOptions="Center" />
+
+                            <Label Text="Dette skjer når du kutter snusen"
+                                    Padding="5,0,0,10"
+                                    FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalOptions="Center" />
+                        </Grid>
+                         <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToSnusHelsegevinster" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

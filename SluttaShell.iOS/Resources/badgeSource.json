@@ -1,0 +1,36 @@
+﻿{[
+  {
+    "Id": "259",
+    "Description": "An 8-ounce serving of our refreshing H+ Sport raspberry mineral water fulfills a day's nutritional requirements for over 12 vitamins and minerals.",
+    "Image_title": "mineral-water-raspberry_600px",
+    "Image": "https://hplussport.com/wp-content/uploads/2015/12/mineral-water-raspberry_600px.png",
+    "Stoff": "royk",
+    "Name": "Pulsen går ned",
+    "Title": "Pulsen går ned",
+    "Time": "20",
+    "TimeUnit": "minutes",
+    "Type": "helsegevinster",
+    "MainImage": "Assets/Badges/20min_medium.png",
+    "SmallImage": "Assets/Badges/20_min.png",
+    "EmptyImage": "Assets/Badges/20_min_BLANK.png",
+    "BgColor": "#99000F",
+    "HighlightColor": "#F2303A"
+  },
+  {
+    "Id": "259",
+    "Description": "An 8-ounce serving of our refreshing H+ Sport aeufgyushf mineral water fulfills a day's nutritional requirements for over 12 vitamins and minerals.",
+    "Image_title": "mineral-water-raspberry_600px",
+    "Image": "https://hplussport.com/wp-content/uploads/2015/12/mineral-water-raspberry_600px.png",
+    "Stoff": "royk",
+    "Name": "Blodsirkulasjonen bedres",
+    "Title": "Blodsirkulasjonen bedres",
+    "Time": "8",
+    "TimeUnit": "hours",
+    "MainImage": "Assets/Badges/8t_medium.png",
+    "SmallImage": "Assets/Badges/8_t_royk.png",
+    "EmptyImage": "Assets/Badges/8_t_BLANK.png",
+    "BgColor": "#F2303A",
+    "HighlightColor": "#A11723"
+  }
+]}
+

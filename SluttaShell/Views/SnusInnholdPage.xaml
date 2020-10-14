@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.SnusInnholdPage"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#f0f0f0"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:Effects="clr-namespace:SluttaShell.Controls"
+             >
+    <ContentPage.Content>
+
+       
+        <StackLayout Padding="15,15,15,10">
+
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <AbsoluteLayout>
+                 <Image Source="back_arrow_graa.png"
+                        
+                        Aspect="AspectFit" HorizontalOptions="Start"
+                        AbsoluteLayout.LayoutBounds="0,0.04,100,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReturnToProfil" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                 <Label Text="Snus inneholder"
+                   HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                   Padding="10, 0, 10, 10"
+                   FontSize="20"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,180,55"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                   FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+
+            <ScrollView>
+                <StackLayout Padding="15,25,15,10">
+                     
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Nikotin"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Nikotin er et giftig og avhengighetsdannende stoff. Det blir klassifisert som et rusmiddel, og er et giftig alkaloid, som man kan finne i tobakksplanter."
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                           <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                            Text="&#x2022;"
+                            ></Label>
+                           <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                            Text="Nikotin er en effektiv insektsdreper, og har konserverende virkning."
+                            ></Label>
+                    </StackLayout>                    
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Nikotin øker produksjonen av saltsyre i magesekken, og kan forverre magesår og spiserørsbetennelse."
+                           ></Label>
+                    </StackLayout>
+                    
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Bly"
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Bly finnes i store mengder i bilbatteri."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Bly brukes som fargestoff i keramikk."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Bly brukes ofte i ammunisjon på grunn av den høye tettheten."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Bly brukes som tilsetningsstoff i krystallglass (blyglass)."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Bly brukes ikke lenger i bensin, maling eller i vannrør på grunn av de alvorlige helsefarene."
+                           ></Label>
+                    </StackLayout>
+                    
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Kvikksølv"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kvikksølv er et tungmetall som er flytende i romtemperatur. Kvikksølv er blant de farligste miljøgiftene og utgjør i dag en trussel for miljøet og menneskers helse både i Norge og globalt."
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kvikksølv er det stoffet som tidligere fikk termometeret til å virke. Det er fjernet fordi det er et meget skadelig stoff."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Det er spesielt farlig å puste inn dampen av kvikksølv - denne kan selv i små mengder gi skader i hjernen."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kvikksølv transporteres over lange avstander med hav- og luftstrømmer."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kvikksølv kan føre til akutt forgiftning, med døden som resultat."
+                           ></Label>
+                    </StackLayout>
+                    
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Arsenikk"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Arsenikk er et oksid, som kan fremstilles ved forbrenning av grunnstoffet arsen. Arsenikk er i ren form et fast, hvitt pulver."
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Arsenikk er lukt- og smakløst, og meget giftig."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Arsenikk brukes i skadedyrbekjempelse og ved fremstilling av opaliserende glass og emalje."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Arsenikk er svært giftig. Ett gram arsenikk er gift nok til å drepe fem mennesker."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Arsenikk brukt til mord var vanskelig å avsløre, og flere tidlige krimforfattere, bl.a. Agatha Christie, utnyttet dette litterært."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Arsenikk i små mengder gir irritasjon og smerter ved innånding og hudkontakt."
+                           ></Label>
+                    </StackLayout>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Krom"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Krom er et kreftfremkallende tungmetall."
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Krom inngår i en rekke produkter, blant annet impregnert trevirke og lær, tekstilfarging, stållegeringer og maling."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Enkelte kromforbindelser er også klassifisert som arvestoffskadelig."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Krom i enkelte forbindelser er kreftfremkallende og allergifremkallende."
+                           ></Label>
+                    </StackLayout>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Kadmium"
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kadmium er et metall som blant annet brukes i batterier og på rustutsatte steder på biler."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kadmium er en svært utbredt miljøgift og en betydelig global forurenser."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Kadmium kan bli i kroppen i årevis og skade lever, nyre, skjelett og hjerne."
+                           ></Label>
+                    </StackLayout>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Nitrosaminer"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Nitrosaminer er en gruppe organiske forbindelser som dannes fra det kjemiske stoffet nitrat."
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Nitrosaminer er kreftfremkallende i en slik grad at EUs vitenskapelige komité har konkludert med at det ikke finnes en sikker minstegrense for inntak av disse stoffene."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Nitrosaminer anvendes bl.a. som konserveringsmiddel."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Noen nitrosaminer har karsinogene (kreftfremkallende) egenskaper."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Nitrosaminer i høye konsentrasjoner regnes som en sikker risikofaktor i utvikling av magesekkreft."
+                           ></Label>
+                    </StackLayout>
+
+                    <BoxView Margin="0, 10"
+                            BackgroundColor="#C6CBCC" HeightRequest="1"
+                            VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                    <Label HorizontalOptions="Center" Padding="0,10,0,10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"
+                           Text="Polonium"
+                           ></Label>
+                    <Label HorizontalOptions="Start" Padding="0,10,0,10" FontSize="20" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Polonium er et naturlig forekommende radioaktivt metall som ble oppdaget av Marie Curie på slutten av 1800-tallet, som oppkalte det etter sitt hjemland Polen."
+                           ></Label>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Polonium isotoper dannes i kjernefysisk industri. Det er et veldig radioaktivt og ekstremt giftig grunnstoff uten spesiell smak eller lukt."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Polonium i høye doser ødelegger vev og organer. Det er meget helseskadelig, og det er svært vanskelig å identifisere for leger."
+                           ></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="&#x2022;"
+                           ></Label>
+                         <Label HorizontalOptions="Start" Padding="0" FontSize="18" FontFamily="{StaticResource Roboto-Regular}"
+                           Text="Polonium ble, ifølge al-Jazeera, målt i høye nivåer i kroppen til Yassir Arafat da han døde."
+                           ></Label>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

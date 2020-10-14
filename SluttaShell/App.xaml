@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Converter="clr-namespace:SluttaShell"
+             mc:Ignorable="d"
+             x:Class="SluttaShell.App"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Slutta-Medium">
+                <On Platform="Android" Value="SluttaMedium.otf#Slutta-Medium" />
+                <On Platform="iOS" Value="Slutta-Medium" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Roboto-Regular">
+                <On Platform="Android" Value="Roboto-Regular.ttf#Roboto-Regular" />
+                <On Platform="iOS" Value="Roboto-Regular" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="Roboto-Medium">
+                <On Platform="Android" Value="Roboto-Medium.ttf#Roboto-Medium" />
+                <On Platform="iOS" Value="Roboto-Medium" />
+            </OnPlatform>
+            <Converter:StringNullOrEmptyBoolConverter x:Key="StringNullOrEmptyBoolConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

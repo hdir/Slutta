@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SluttaShell.Views.SharePage"
+    NavigationPage.HasNavigationBar="false"
+    >
+    <ContentPage.Content>
+        <StackLayout Padding="15,15,15,10">
+            <Image Source="back_arrow_graa.png" Aspect="AspectFit" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ReturnHome" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <StackLayout Padding="10,0,10,30">
+                <Label Text="Forbereder å dele fremdriften din"
+                       HorizontalTextAlignment="Center"
+                       FontFamily="{StaticResource Slutta-Medium}"
+                       FontSize="26"
+                       />
+            </StackLayout>
+
+            <!-- SHARE STUFF GOES HERE -->
+            <Frame BorderColor="#707070" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand" >
+                <StackLayout x:Name="ShareContent"
+                        Padding="0,10,0,10"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        HeightRequest="400">                
+                    <Image Source="sluttalogo"
+                           HorizontalOptions="Center"                           
+                           ></Image>
+                    <CollectionView ItemsSource="{Binding StoffList}"
+                                    x:Name="ShareContentBoth"
+                                    ItemsLayout="VerticalList"
+                                    VerticalOptions="CenterAndExpand"                                    
+                                    >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Grid Padding="5, 20, 5, 10"
+                                          VerticalOptions="CenterAndExpand"
+                                          >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="9*" />
+                                            <ColumnDefinition Width="8*" />
+                                            <ColumnDefinition Width="8*" />
+                                            <ColumnDefinition Width="8*" />
+                                        </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding ShareFlavourText}"
+                                                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                                                HorizontalOptions="CenterAndExpand"
+                                            />
+                                        <Label Text="{Binding Days}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center"></Label>
+                                        <Label Text="{Binding Hours}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" />
+                                        <Label Text="{Binding Minutes}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" />
+                                        <Label Text="{Binding Seconds}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" />
+
+                                        <Label Text="DAGER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" />
+                                        <Label Text="TIMER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" />
+                                        <Label Text="MINUTTER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" />
+                                        <Label Text="SEKUNDER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="3" HorizontalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <StackLayout x:Name="ShareContentSmoke"
+                                 VerticalOptions="CenterAndExpand"
+                                 >
+                        <Grid Padding="5, 20, 5, 10"
+                                VerticalOptions="CenterAndExpand"
+                                >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="8*" />
+                            </Grid.ColumnDefinitions>
+                                <Label Text="{Binding StoffList[0].ShareFlavourText}"
+                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                                    HorizontalOptions="CenterAndExpand"
+                                />
+                            <Label Text="{Binding StoffList[0].Days}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding StoffList[0].Hours}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="{Binding StoffList[0].Minutes}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="{Binding StoffList[0].Seconds}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" />
+
+                            <Label Text="DAGER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" />
+                            <Label Text="TIMER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="MINUTTER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="SEKUNDER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="3" HorizontalOptions="Center" />
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout x:Name="ShareContentSnus"
+                                 VerticalOptions="CenterAndExpand"
+                                 >
+                        <Grid Padding="5, 20, 5, 10"
+                                VerticalOptions="CenterAndExpand"
+                                >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="8*" />
+                            </Grid.ColumnDefinitions>
+                                <Label Text="{Binding StoffList[1].ShareFlavourText}"
+                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+                                    HorizontalOptions="CenterAndExpand"
+                                />
+                            <Label Text="{Binding StoffList[1].Days}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center"></Label>
+                            <Label Text="{Binding StoffList[1].Hours}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="{Binding StoffList[1].Minutes}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="{Binding StoffList[1].Seconds}" FontSize="35" Scale="1" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" />
+
+                            <Label Text="DAGER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" />
+                            <Label Text="TIMER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="MINUTTER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="SEKUNDER" FontSize="11" Scale="1" Grid.Row="2" Grid.Column="3" HorizontalOptions="Center" />
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

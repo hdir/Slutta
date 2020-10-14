@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.HelpPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#f3f3f3"
+             >
+        <StackLayout Margin="0,15,0,0">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+            <AbsoluteLayout>
+                <Label Text="Hjelp" HorizontalOptions="Center" Padding="10, 10, 10, 10"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,100,60"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                       FontSize="20" FontFamily="{StaticResource Roboto-Medium}"></Label>
+             </AbsoluteLayout>
+
+            <ScrollView x:Name="HelpPageScrollView">
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Start"
+                             Spacing="0"
+                             Margin="20,0,20,0"
+                             Padding="0, 0, 0, 160">
+
+                        <!-- TIPS section - randomly generated from json list -->
+                        <Label x:Name="Tips_Title" Text="TIPS #X" HorizontalOptions="Center" Padding="10, 20, 10, 10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"></Label>
+                        <Label x:Name="Tips_Desc"
+                               Text="Minn deg selv på andre vanskelige situasjoner du har kommet gjennom."
+                               HorizontalOptions="Center"
+                               VerticalOptions="StartAndExpand"
+                               Margin="40, 0, 40, 20"></Label>
+
+                        <Grid  x:Name="QuickMenuInnerLayout"
+                               Padding="20,10,20,10"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               HeightRequest="350">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="7*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                           <CarouselView ItemsSource="{Binding HelpToolsList}"
+                                  x:Name="helpToolsCarousel"
+                                  InputTransparent="False"
+                                  IndicatorView="indicatorView"
+                                  VerticalOptions="CenterAndExpand"
+                                  Grid.Row="0"
+                                        
+                                  >
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>                                
+                                        <StackLayout Padding="0, 20, 0, 15"
+                                                     Margin="0"
+                                                     VerticalOptions="StartAndExpand"
+                                                      HeightRequest="200"
+                                                     >
+                                            <Image Source="{Binding MainImage}"
+                                                   VerticalOptions="FillAndExpand"
+                                                   >
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="HelpTool_Selected" NumberOfTapsRequired="1"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView x:Name="indicatorView"
+                                   IndicatorColor="#bdbdbd"
+                                   IndicatorSize="8"
+                                   Grid.Row="1"
+                                   SelectedIndicatorColor="#707070"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="StartAndExpand"
+                                   />
+                        </Grid>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        <!--end of stacklayout MainLayout-->    
+
+</ContentPage>
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SluttaShell.Views.HelpPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#f3f3f3"
+             >
+
+    <ContentPage.Content>
+         <AbsoluteLayout>
+         <StackLayout Margin="0,25,0,0">
+            <ScrollView>
+        
+            <StackLayout Margin="0,25,0,0"
+                        VerticalOptions="Start"
+                        >
+            <Label Text="Hjelp" HorizontalOptions="Center" Padding="10, 40, 10, 10" FontSize="20" FontFamily="{StaticResource Roboto-Medium}"></Label>
+
+             TIPS section - randomly generated from json list 
+            <Label x:Name="Tips_Title" Text="TIPS #X" HorizontalOptions="Center" Padding="10, 30, 10, 10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"></Label>
+            <Label x:Name="Tips_Desc" Text="Minn deg selv på andre vanskelige situasjoner du har kommet gjennom." HorizontalOptions="Center" Padding="40, 0, 40, 20"></Label>
+
+            <Grid  x:Name="QuickMenuInnerLayout"
+                           Padding="20,10,20,10"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="StartAndExpand"
+                           >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                     HELP TOOLS 
+                    <CarouselView ItemsSource="{Binding HelpToolsList}"
+                                  x:Name="helpToolsCarousel"
+                                  InputTransparent="False"
+                                  IndicatorView="indicatorView"
+                                  VerticalOptions="CenterAndExpand"
+                                  Grid.Row="0"
+                                  >
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>                                
+                                <StackLayout Padding="0, 20, 0, 0" Margin="0" VerticalOptions="CenterAndExpand">
+                                    <Image Source="{Binding MainImage}" VerticalOptions="Fill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="HelpTool_Selected" NumberOfTapsRequired="1"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView x:Name="indicatorView"
+                           IndicatorColor="#bdbdbd"
+                           IndicatorSize="8"
+                           Grid.Row="1"
+                           SelectedIndicatorColor="#707070"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="StartAndExpand"
+                           />
+            </Grid>
+               </StackLayout>
+          </ScrollView>
+        </StackLayout>
+            </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>-->

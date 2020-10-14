@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" x:Class="SluttaShell.Views.SettingsPage"
+             xmlns:vm="clr-namespace:SluttaShell.ViewModels"
+             xmlns:sluttacustoms="clr-namespace:SluttaShell.Controls;"
+             Title="{Binding Title}"
+             BackgroundColor="#f3f3f3"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="false"
+             >
+    <ContentPage.BindingContext>
+        <vm:SettingsViewModel />
+    </ContentPage.BindingContext>
+
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#000</Color>
+            <Color x:Key="Accent">#f00</Color>
+            <Color x:Key="LightTextColor">#fff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+         <StackLayout Margin="0,15,0,0">
+
+             <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+             <AbsoluteLayout>
+                 <Label Text="Profil" HorizontalOptions="Center" Padding="10, 15, 10, 10"
+                        AbsoluteLayout.LayoutBounds=".5,0.02,100,70"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        FontSize="20" FontFamily="{StaticResource Roboto-Medium}"></Label>
+                 <Label Text="Lagre"
+                        x:Name="saveAnimated"
+                        HorizontalOptions="End"
+                        Padding="10, 15, 10, 10"
+                        AbsoluteLayout.LayoutBounds="1,0.02,100,70"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        FontSize="20"
+                        FontFamily="{StaticResource Roboto-Regular}"
+                        >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SaveUserSettings" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                 </Label>
+             </AbsoluteLayout>
+
+
+            <ScrollView>
+                <StackLayout Margin="20,0,20,0">
+
+                    <!-- SMOKING SETTINGS -->
+                    <Grid Padding="0" VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                        <Label Text="Jeg røyker"  Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="1" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <Switch Grid.Row="1" Grid.Column="1" HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                IsToggled="{Binding StoffList[0].IsActive}"
+                                OnColor="#1A5C6A"
+                                x:Name="royk_active"
+                                Margin="0, 0, 15, 0"
+                                />
+                        <Label Text="Velg denne hvis du vil slutte å røyke. Oppgi detaljer i feltene under så kan du følge fremgangen din."
+                               Padding="0,0,0,10"
+                               Margin="0, 0, 15, 0"
+                               TextColor="#707070"
+                               FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                               Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                               VerticalOptions="Center" />
+                    </Grid>
+
+
+                    <Grid Padding="0" x:Name="SmokingFields" VerticalOptions="Start" IsVisible="{Binding StoffList[0].IsActive}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45*" />
+                            <ColumnDefinition Width="55*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Antall sigaretter"  Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="1" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <sluttacustoms:BorderlessPicker x:Name="royk_antall"
+                                                        SelectedItem="{Binding StoffList[0].AntallPretty}"
+                                                        HorizontalOptions="End"
+                                                        Grid.Row="1" Grid.Column="1"
+                                                        TextColor="#707070"
+                                                        BackgroundColor="#eee9e9"
+                                                        >
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                            </Picker.Items>
+                        </sluttacustoms:BorderlessPicker>
+                        <Label Text="Velg antall sigaretter du røkte daglig før du bestemte deg for å slutte."
+                               Padding="0,0,0,5"
+                               Margin="0, 0, 15, 0"
+                               TextColor="#707070"
+                               FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                               Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                               VerticalOptions="Center" />
+
+
+                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="#C6CBCC" HeightRequest="1" Margin="0"
+                                VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Pris per sigarett" Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="4" Grid.Column="0"
+                               VerticalOptions="Center"
+                                />
+                        <sluttacustoms:BorderlessPicker x:Name="royk_pris"
+                                                        SelectedItem="{Binding StoffList[0].Pris}"
+                                                        HorizontalOptions="End"
+                                                        Grid.Row="4" Grid.Column="1"
+                                                        TextColor="#707070"
+                                                        BackgroundColor="#eee9e9"
+                                                        >
+                            <Picker.Items>
+                                <x:String>1,00</x:String>
+                                <x:String>1,10</x:String>
+                                <x:String>1,20</x:String>
+                                <x:String>1,30</x:String>
+                                <x:String>1,40</x:String>
+                                <x:String>1,50</x:String>
+                                <x:String>1,60</x:String>
+                                <x:String>1,70</x:String>
+                                <x:String>1,80</x:String>
+                                <x:String>1,90</x:String>
+                                <x:String>2,00</x:String>
+                                <x:String>2,10</x:String>
+                                <x:String>2,20</x:String>
+                                <x:String>2,30</x:String>
+                                <x:String>2,40</x:String>
+                                <x:String>2,50</x:String>
+                                <x:String>2,60</x:String>
+                                <x:String>2,70</x:String>
+                                <x:String>2,80</x:String>
+                                <x:String>2,90</x:String>
+                                <x:String>3,00</x:String>
+                                <x:String>3,10</x:String>
+                                <x:String>3,20</x:String>
+                                <x:String>3,30</x:String>
+                                <x:String>3,40</x:String>
+                                <x:String>3,50</x:String>
+                                <x:String>3,60</x:String>
+                                <x:String>3,70</x:String>
+                                <x:String>3,80</x:String>
+                                <x:String>3,90</x:String>
+                                <x:String>4,00</x:String>
+                                <x:String>4,10</x:String>
+                                <x:String>4,20</x:String>
+                                <x:String>4,30</x:String>
+                                <x:String>4,40</x:String>
+                                <x:String>4,50</x:String>
+                                <x:String>4,60</x:String>
+                                <x:String>4,70</x:String>
+                                <x:String>4,80</x:String>
+                                <x:String>4,90</x:String>
+                                <x:String>5,00</x:String>
+                                <x:String>5,10</x:String>
+                                <x:String>5,20</x:String>
+                                <x:String>5,30</x:String>
+                                <x:String>5,40</x:String>
+                                <x:String>5,50</x:String>
+                                <x:String>5,60</x:String>
+                                <x:String>5,70</x:String>
+                                <x:String>5,80</x:String>
+                                <x:String>5,90</x:String>
+                                <x:String>6,00</x:String>
+                                <x:String>6,10</x:String>
+                                <x:String>6,20</x:String>
+                                <x:String>6,30</x:String>
+                                <x:String>6,40</x:String>
+                                <x:String>6,50</x:String>
+                                <x:String>6,60</x:String>
+                                <x:String>6,70</x:String>
+                                <x:String>6,80</x:String>
+                                <x:String>6,90</x:String>
+                                <x:String>7,00</x:String>
+                                <x:String>7,10</x:String>
+                                <x:String>7,20</x:String>
+                                <x:String>7,30</x:String>
+                                <x:String>7,40</x:String>
+                                <x:String>7,50</x:String>
+                                <x:String>7,60</x:String>
+                                <x:String>7,70</x:String>
+                                <x:String>7,80</x:String>
+                                <x:String>7,90</x:String>
+                                <x:String>8,00</x:String>
+                                <x:String>8,10</x:String>
+                                <x:String>8,20</x:String>
+                                <x:String>8,30</x:String>
+                                <x:String>8,40</x:String>
+                                <x:String>8,50</x:String>
+                                <x:String>8,60</x:String>
+                                <x:String>8,70</x:String>
+                                <x:String>8,80</x:String>
+                                <x:String>8,90</x:String>
+                                <x:String>9,00</x:String>
+                                <x:String>9,10</x:String>
+                                <x:String>9,20</x:String>
+                                <x:String>9,30</x:String>
+                                <x:String>9,40</x:String>
+                                <x:String>9,50</x:String>
+                                <x:String>9,60</x:String>
+                                <x:String>9,70</x:String>
+                                <x:String>9,80</x:String>
+                                <x:String>9,90</x:String>
+                                <x:String>10,00</x:String>
+                                <x:String>10,10</x:String>
+                                <x:String>10,20</x:String>
+                                <x:String>10,30</x:String>
+                                <x:String>10,40</x:String>
+                                <x:String>10,50</x:String>
+                                <x:String>10,60</x:String>
+                                <x:String>10,70</x:String>
+                                <x:String>10,80</x:String>
+                                <x:String>10,90</x:String>
+                                <x:String>11,00</x:String>
+                            </Picker.Items>
+                        </sluttacustoms:BorderlessPicker>
+
+
+                        <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="#C6CBCC" HeightRequest="1"
+                                VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <!-- Quitting start date RØYK -->
+                        <Label Text="Røykfri siden" Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="6" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <Grid Padding="0" VerticalOptions="Center" Grid.Row="6" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65*" />
+                                <ColumnDefinition Width="35*" />
+                            </Grid.ColumnDefinitions>
+                            <sluttacustoms:BorderlessDatePicker
+                                        Margin="0,0,0,0"
+                                        MinimumDate="01/01/1970"
+                                        MaximumDate="01/01/2050"
+                                        Date="{Binding StoffList[0].QuitDate}"
+                                        Grid.Row="0" Grid.Column="0"
+                                        Format="dd/MM/yyyy"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="End"
+                                        TextColor="#707070"
+                                        BackgroundColor="#eee9e9"
+                                        />
+                            <sluttacustoms:BorderlessTimePicker Margin="0,0,0,0"
+                                        Time="{Binding StoffList[0].QuitTime}"
+                                        Grid.Row="0" Grid.Column="1"
+                                        Format="HH:mm"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="End"
+                                        BackgroundColor="#eee9e9"
+                                        TextColor="#707070"
+                                        />
+                        </Grid>
+                        <Label Text="Klikk på dato og klokkeslett for å endre ditt sluttetidspunkt."
+                               Padding="0,0,0,0"
+                               TextColor="#707070"
+                               FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                               Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+                               VerticalOptions="Center" /> 
+                         
+
+                        <BoxView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="#C6CBCC" HeightRequest="1"
+                                VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                        <Label Text="Jeg slutter pga." Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="9" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <sluttacustoms:BorderlessPicker x:Name="royk_grunn"
+                                                        SelectedItem="{Binding StoffList[0].Grunn}"
+                                                        HorizontalOptions="End"
+                                                        Grid.Row="9" Grid.Column="1"
+                                                        BackgroundColor="#eee9e9"
+                                                        TextColor="#707070"
+                                                        >
+                            <Picker.Items>
+                                <x:String>Helse</x:String>
+                                <x:String>Penger</x:String>
+                                <x:String>Avhengighet</x:String>
+                                <x:String>Mine nærmeste</x:String>
+                                <x:String>Utseende</x:String>
+                                <x:String>Annet</x:String>
+                            </Picker.Items>
+                        </sluttacustoms:BorderlessPicker>
+                    </Grid>
+
+
+
+
+
+
+                    <!-- SNUS -->
+                    <Grid Padding="0" VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*" />
+                            <ColumnDefinition Width="60*" />
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                        <Label Text="Jeg snuser" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="1" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <Switch Grid.Row="1" Grid.Column="1"
+                                IsToggled="{Binding StoffList[1].IsActive}"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                OnColor="#1A5C6A"
+                                x:Name="snus_active"
+                                Margin="0, 0, 15, 0"
+                                />
+                        <Label Text="Velg denne hvis du vil slutte å snuse. Oppgi detaljer i feltene under så kan du følge fremgangen din."
+                               Padding="0,0,0,10"
+                               TextColor="#707070"
+                               FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                               Margin="0, 0, 15, 0"
+                               Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                               VerticalOptions="Center" />
+                    </Grid>
+
+
+                    <Grid Padding="0" VerticalOptions="Start" IsVisible="{Binding StoffList[1].IsActive}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45*" />
+                            <ColumnDefinition Width="55*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+
+                        <Label Text="Antall snus" Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="1" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <sluttacustoms:BorderlessPicker x:Name="snus_antall"
+                                                        SelectedItem="{Binding StoffList[1].AntallPretty}"
+                                                        HorizontalOptions="End"
+                                                        Grid.Row="1" Grid.Column="1"
+                                                        BackgroundColor="#eee9e9"
+                                                        TextColor="#707070"
+                                                        >
+                            <Picker.Items>
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                                <x:String>32</x:String>
+                                <x:String>33</x:String>
+                                <x:String>34</x:String>
+                                <x:String>35</x:String>
+                                <x:String>36</x:String>
+                                <x:String>37</x:String>
+                                <x:String>38</x:String>
+                                <x:String>39</x:String>
+                                <x:String>40</x:String>
+                            </Picker.Items>
+                        </sluttacustoms:BorderlessPicker>
+                        <Label  Text="Velg antall snus du snuste daglig før du bestemte deg for å slutte." Scale="1" Padding="0,0,0,0"
+                                FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                TextColor="#707070"
+                                Margin="0, 0, 15, 0"
+                                VerticalOptions="Center"
+                                />
+
+
+                        <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="#C6CBCC" HeightRequest="1"
+                                VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Pris per snus" Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="4" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <sluttacustoms:BorderlessPicker x:Name="snus_pris"
+                                                        SelectedItem="{Binding StoffList[1].Pris}"
+                                                        HorizontalOptions="End"
+                                                        VerticalOptions="Center"
+                                                        BackgroundColor="#eee9e9"
+                                                        TextColor="#707070"
+                                                        Grid.Row="4"
+                                                        Grid.Column="1"
+                                                        >
+                            <Picker.Items>
+                                <x:String>1,00</x:String>
+                                <x:String>1,10</x:String>
+                                <x:String>1,20</x:String>
+                                <x:String>1,30</x:String>
+                                <x:String>1,40</x:String>
+                                <x:String>1,50</x:String>
+                                <x:String>1,60</x:String>
+                                <x:String>1,70</x:String>
+                                <x:String>1,80</x:String>
+                                <x:String>1,90</x:String>
+                                <x:String>2,00</x:String>
+                                <x:String>2,10</x:String>
+                                <x:String>2,20</x:String>
+                                <x:String>2,30</x:String>
+                                <x:String>2,40</x:String>
+                                <x:String>2,50</x:String>
+                                <x:String>2,60</x:String>
+                                <x:String>2,70</x:String>
+                                <x:String>2,80</x:String>
+                                <x:String>2,90</x:String>
+                                <x:String>3,00</x:String>
+                                <x:String>3,10</x:String>
+                                <x:String>3,20</x:String>
+                                <x:String>3,30</x:String>
+                                <x:String>3,40</x:String>
+                                <x:String>3,50</x:String>
+                                <x:String>3,60</x:String>
+                                <x:String>3,70</x:String>
+                                <x:String>3,80</x:String>
+                                <x:String>3,90</x:String>
+                                <x:String>4,00</x:String>
+                                <x:String>4,10</x:String>
+                                <x:String>4,20</x:String>
+                                <x:String>4,30</x:String>
+                                <x:String>4,40</x:String>
+                                <x:String>4,50</x:String>
+                                <x:String>4,60</x:String>
+                                <x:String>4,70</x:String>
+                                <x:String>4,80</x:String>
+                                <x:String>4,90</x:String>
+                                <x:String>5,00</x:String>
+                                <x:String>5,10</x:String>
+                                <x:String>5,20</x:String>
+                                <x:String>5,30</x:String>
+                                <x:String>5,40</x:String>
+                                <x:String>5,50</x:String>
+                                <x:String>5,60</x:String>
+                                <x:String>5,70</x:String>
+                                <x:String>5,80</x:String>
+                                <x:String>5,90</x:String>
+                                <x:String>6,00</x:String>
+                                <x:String>6,10</x:String>
+                                <x:String>6,20</x:String>
+                                <x:String>6,30</x:String>
+                                <x:String>6,40</x:String>
+                                <x:String>6,50</x:String>
+                                <x:String>6,60</x:String>
+                                <x:String>6,70</x:String>
+                                <x:String>6,80</x:String>
+                                <x:String>6,90</x:String>
+                                <x:String>7,00</x:String>
+                                <x:String>7,10</x:String>
+                                <x:String>7,20</x:String>
+                                <x:String>7,30</x:String>
+                                <x:String>7,40</x:String>
+                                <x:String>7,50</x:String>
+                                <x:String>7,60</x:String>
+                                <x:String>7,70</x:String>
+                                <x:String>7,80</x:String>
+                                <x:String>7,90</x:String>
+                                <x:String>8,00</x:String>
+                                <x:String>8,10</x:String>
+                                <x:String>8,20</x:String>
+                                <x:String>8,30</x:String>
+                                <x:String>8,40</x:String>
+                                <x:String>8,50</x:String>
+                                <x:String>8,60</x:String>
+                                <x:String>8,70</x:String>
+                                <x:String>8,80</x:String>
+                                <x:String>8,90</x:String>
+                                <x:String>9,00</x:String>
+                                <x:String>9,10</x:String>
+                                <x:String>9,20</x:String>
+                                <x:String>9,30</x:String>
+                                <x:String>9,40</x:String>
+                                <x:String>9,50</x:String>
+                                <x:String>9,60</x:String>
+                                <x:String>9,70</x:String>
+                                <x:String>9,80</x:String>
+                                <x:String>9,90</x:String>
+                                <x:String>10,00</x:String>
+                                <x:String>10,10</x:String>
+                                <x:String>10,20</x:String>
+                                <x:String>10,30</x:String>
+                                <x:String>10,40</x:String>
+                                <x:String>10,50</x:String>
+                                <x:String>10,60</x:String>
+                                <x:String>10,70</x:String>
+                                <x:String>10,80</x:String>
+                                <x:String>10,90</x:String>
+                                <x:String>11,00</x:String>
+                            </Picker.Items>
+                        </sluttacustoms:BorderlessPicker>
+
+
+                         <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <!-- Quitting start date SNUS -->
+                        <Label Text="Snusfri siden" Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="6" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <Grid Padding="0" VerticalOptions="Center" Grid.Row="6" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65*" />
+                                <ColumnDefinition Width="35*" />
+                            </Grid.ColumnDefinitions>
+                            <sluttacustoms:BorderlessDatePicker
+                                        Margin="0,0,0,0"
+                                        x:Name="dato_snusfri_siden"
+                                        MinimumDate="01/01/1970"
+                                        MaximumDate="01/01/2050"
+                                        Date="{Binding StoffList[1].QuitDate}"
+                                        Grid.Row="0" Grid.Column="0"
+                                        Format="dd/MM/yyyy"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="End"
+                                        TextColor="#707070"
+                                        BackgroundColor="#eee9e9"
+                                        />
+                            <sluttacustoms:BorderlessTimePicker Margin="0,0,0,0"
+                                        x:Name="time_snusfri_siden"
+                                        Time="{Binding StoffList[1].QuitTime}"
+                                        Grid.Row="0" Grid.Column="1"
+                                        Format="HH:mm"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="End"
+                                        BackgroundColor="#eee9e9"
+                                        TextColor="#707070"
+                                        />
+                        </Grid>
+                        <Label Text="Klikk på dato og klokkeslett for å endre ditt sluttetidspunkt."
+                               Padding="0,0,0,0"
+                               TextColor="#707070"
+                               FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                               Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+                               VerticalOptions="Center" /> 
+
+                        <BoxView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Jeg slutter pga." Scale="1" Padding="0,0,0,0"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="9" Grid.Column="0"
+                               VerticalOptions="Center" />
+                        <sluttacustoms:BorderlessPicker x:Name="snus_grunn"
+                                                        SelectedItem="{Binding StoffList[1].Grunn}"
+                                                        HorizontalOptions="End"
+                                                        Grid.Row="9" Grid.Column="1"
+                                                        BackgroundColor="#eee9e9"
+                                                        TextColor="#707070"
+                                                        >
+                            <Picker.Items>
+                                <x:String>Helse</x:String>
+                                <x:String>Penger</x:String>
+                                <x:String>Avhengighet</x:String>
+                                <x:String>Mine nærmeste</x:String>
+                                <x:String>Utseende</x:String>
+                                <x:String>Annet</x:String>
+                            </Picker.Items>
+                        </sluttacustoms:BorderlessPicker>
+                    </Grid>
+
+
+                    <Grid Padding="0" VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Title row -->
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+
+                        <Label  Text="Pushmeldinger" Padding="0, 10, 0, 10"
+                                FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                                Grid.Row="1"
+                                />
+                        <Label  Text="Ønsker du ikke å motta pushmeldinger lenger? Dette kan skrus av i telefonens innstillinger." Scale="1" Padding="0,0,0,0"
+                                FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                Margin="0, 0, 15, 0"
+                                VerticalOptions="Center" />
+                        <Label  Text="Husk at meldingene du får er ment å være motiverende. Vi anbefaler derfor at varsling er på." Scale="1" Padding="0,0,0,0"
+                                FontSize="14" FontFamily="{StaticResource Roboto-Regular}"
+                                Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                Margin="0, 0, 15, 0"
+                                VerticalOptions="Center" />
+
+                    </Grid>
+
+
+                    <Grid Padding="0" VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80*" />
+                            <ColumnDefinition Width="20*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Title row -->
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                 BackgroundColor="#C6CBCC" HeightRequest="1"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+                        <Label Text="Personvern"  Padding="0, 10, 0, 10"
+                               FontSize="18" FontFamily="{StaticResource Roboto-Medium}"
+                               Grid.Row="1"  Grid.Column="0"
+                               >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="GoToPersonvern" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Image Source="rightArrow"
+                               Aspect="AspectFit" HorizontalOptions="End"
+                               Margin="0, 0, 15, 0"
+                               Grid.Row="1"  Grid.Column="1"
+                               >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="GoToPersonvern" NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+
+                    </Grid>
+
+
+                </StackLayout>
+            </ScrollView>
+         </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

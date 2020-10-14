@@ -1,0 +1,18 @@
+﻿[
+  {
+    "ShowChemicals": true,
+    "ShareFlavourText": "Jeg har vært røykfri i:",
+    "Antall": 3,
+    "AntallPretty": "3",
+    "Pris": "7,00",
+    "Grunn": "Helse"
+  },
+  {
+    "ShowChemicals": false,
+    "ShareFlavourText": "Jeg har vært snusfri i:",
+    "Antall":  2,
+    "AntallPretty": "2",
+    "Pris": "5,00",
+    "Grunn": "Helse"
+  }
+]

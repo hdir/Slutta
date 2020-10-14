@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" x:Class="SluttaShell.Views.HomePage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="false"
+             x:Name="SplashHomePage"
+             >
+    <ContentPage.Background>
+            <!-- StartPoint defaults to (0,0) -->
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#FAF5F5"
+                                Offset="0.1" />
+                <GradientStop Color="#E6E1E1"
+                                Offset="1.0" />
+            </LinearGradientBrush>
+    </ContentPage.Background>
+    <AbsoluteLayout>
+
+        <AbsoluteLayout.Background>
+            <!-- StartPoint defaults to (0,0) -->
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#FAF5F5"
+                                Offset="0.1" />
+                <GradientStop Color="#E6E1E1"
+                                Offset="1.0" />
+            </LinearGradientBrush>
+        </AbsoluteLayout.Background>
+
+        <StackLayout x:Name="QuickMenuPullLayout"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand"
+                             Spacing="0"
+                             Padding="0, 0, 0, 0"
+                             BackgroundColor="Transparent"
+                     >
+            
+            <StackLayout x:Name="QuickMenuLayout">
+                <Grid x:Name="Statistics"  HeightRequest="170">
+                    <CarouselView ItemsSource="{Binding StoffList}" HeightRequest="170" x:Name="savingsCarousel" InputTransparent="True">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="CenterAndExpand"
+                                            >
+                                    <!-- money saved -->
+                                    <Grid Padding="25, 2, 25, 2" VerticalOptions="CenterAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding TotalAntallPretty}" FontSize="11" Scale="1" Grid.Row="0" HorizontalOptions="Center" />
+                                    </Grid>
+                                    
+                                    <Grid Padding="25, 0, 25, 4" VerticalOptions="StartAndExpand" IsVisible="{Binding ShowChemicals}" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                             <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding TarAvoidedPretty}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                        <Label Text="TJÆRE" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start" />
+
+                                        <Label Text="{Binding NicotineAvoidedPretty}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                        <Label Text="NIKOTIN (MG)" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start" />
+
+                                        <Label Text="{Binding AmmoniaAvoidedPretty}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                        <Label Text="AMMONIAKK" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Start" />
+
+                                    </Grid>
+
+                                    <Grid Padding="25, 4, 25, 0" VerticalOptions="CenterAndExpand" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding MoneySavedPretty}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"></Label>
+                                        <Label Text="KRONER SPART" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Grid>
+
+                <Grid x:Name="QuickMenuInnerLayout"
+                      Padding="20,0,20,4"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="CenterAndExpand"
+                      HeightRequest="96">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CarouselView ItemsSource="{Binding StoffList}" x:Name="timerCarousel" InputTransparent="True">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <!-- timer grid   -->
+                                <Grid Padding="25, 23, 25, 0" VerticalOptions="CenterAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*" />
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*" />
+                                        <ColumnDefinition Width="8*" />
+                                        <ColumnDefinition Width="8*" />
+                                        <ColumnDefinition Width="8*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Days}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center"></Label>
+                                    <Label Text="{Binding Hours}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Minutes}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Seconds}" FontSize="28" Scale="1" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" />
+
+                                    <Label Text="DAGER" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" />
+                                    <Label Text="TIMER" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" />
+                                    <Label Text="MINUTTER" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" />
+                                    <Label Text="SEKUNDER" FontSize="11" Scale="1" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" />
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Grid>
+
+                <StackLayout x:Name="QuickMenuBaseLayout">
+                    <Frame  
+                                HorizontalOptions="Center"
+                                x:Name="CarouselButtons1"
+                                BackgroundColor="#E0E0E0"
+                                CornerRadius="3"  
+                                OutlineColor="Transparent"
+                                Margin="0,0,0,20"
+                                HasShadow="False"
+                                Padding="3">
+                        <StackLayout  Orientation="Horizontal"
+                                      Padding="0"
+                            >
+                            <Button Text="Røykfri"
+                                    FontSize="16"
+                                    x:Name="ToggleToRoyk"
+                                    FontFamily="{StaticResource Roboto-Regular}"
+                                    TextColor="#4B4B4B"
+                                    CornerRadius="3"
+                                    Padding="14,0,14,0"
+                                    BackgroundColor="#FFFFFF"
+                                    BorderColor="#CCCCCC"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    HeightRequest="34"
+                                    Clicked="ToggleCarouselButtonsToRoyk" />
+                            <Button Text="Snusfri"
+                                    x:Name="ToggleToSnus"
+                                    FontSize="16"
+                                    FontFamily="{StaticResource Roboto-Regular}"
+                                    TextColor="#4B4B4B"
+                                    CornerRadius="3"
+                                    Padding="14,0,14,0"
+                                    BackgroundColor="#FFFFFF"
+                                    BorderColor="#CCCCCC"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    HeightRequest="34"
+                                    Clicked="ToggleCarouselToSnus" />
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout    Orientation="Vertical"
+                                    Padding="0, 0, 0, 2"
+                            >
+                        <BoxView HorizontalOptions="Center" WidthRequest="30" HeightRequest="2" Color="#C6CBCC" />
+                        <BoxView HorizontalOptions="Center" WidthRequest="30" HeightRequest="2" Color="#C6CBCC"/>
+                        <BoxView HorizontalOptions="FillAndExpand" WidthRequest="1" HeightRequest="1" Color="#C6CBCC"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Spacing="0"
+                            Padding="0, 10, 0, 80"
+                            >
+
+                <!--// badges go here-->
+                <Grid x:Name="BadgeListRoyk"
+                        Padding="0,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <CollectionView ItemsSource="{Binding BadgeInfo.BadgeInfoRoyk}" ItemsLayout="HorizontalList" SelectionMode="Single" SelectionChanged="Badge_Selected">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Margin="12, 1, 1, 1">
+                                    <Image Source="{Binding ImageUrlProcessed}" HeightRequest="70"></Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+
+                <Grid x:Name="BadgeListSnus"
+                        Padding="0,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <CollectionView ItemsSource="{Binding BadgeInfo.BadgeInfoSnus}" ItemsLayout="HorizontalList" SelectionMode="Single" SelectionChanged="Badge_Selected">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Margin="12, 1, 1, 1">
+                                    <Image Source="{Binding ImageUrlProcessed}" HeightRequest="70"></Image>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+
+                <Frame  HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        HasShadow="False"
+                        BackgroundColor="Transparent"
+                        >
+                    <Image  x:Name="PanicButton"
+                            Source="help_circle.png"
+                            Aspect="AspectFit"
+                            Margin="0, 0, 0, 0"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                        >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToHelp" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+        <BoxView    Color="#FAF5F5"
+                    HorizontalOptions="FillAndExpand"
+                    WidthRequest="1000"
+                    HeightRequest="80"
+                    />
+        <Image      Source="sluttalogo" 
+                    AbsoluteLayout.LayoutBounds=".5,-0.03,100,100"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    ></Image>
+        <Image      Source="share_red.png" Aspect="AspectFit" HorizontalOptions="End"
+                    AbsoluteLayout.LayoutBounds="1,-0.035,100,100"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Share_Progress" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Frame
+            x:Name="Popup"
+            AbsoluteLayout.LayoutBounds=".5,.3,.8,.4"
+            AbsoluteLayout.LayoutFlags="All"
+            HasShadow="True"
+            BorderColor="#cccccc"
+            IsVisible="False"
+            Padding="0"
+            >
+            <StackLayout
+                BackgroundColor="#FFFFFF"
+                Padding="0"
+                Orientation="Vertical"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="FillAndExpand"
+                >
+                <Label
+                        x:Name="PopupMsg"
+                        Text="ZERO DAY NOTIF"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Padding="0"
+                        Margin="20"
+                        />
+                <BoxView 
+                        BackgroundColor="#C6CBCC" HeightRequest="1"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        />
+                <Button Text="OK"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Fill"
+                        TextColor="#1A5C6A" FontSize="24"
+                        FontFamily="{StaticResource Roboto-Regular}"
+                        BackgroundColor="#FFFFFF"
+                        CornerRadius="0"
+                        Padding="0"
+                        Margin="0, 0, 0, 10"
+                        Clicked="Close_Popup" />
+            </StackLayout>
+        </Frame>
+
+    </AbsoluteLayout>
+</ContentPage>

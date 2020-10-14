@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ns0="using:SluttaShell.Views"
+             x:Class="SluttaShell.Views.HelpDetailPage"
+             x:Name="thisPage"
+             BackgroundColor="#f3f3f3"
+             NavigationPage.HasNavigationBar="false"
+             >
+
+    <ContentPage.Content>
+        <StackLayout Padding="15,15,15,10">
+            <StackLayout.Background>
+                <!-- StartPoint defaults to (0,0) -->
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FAF5F5"
+                                    Offset="0.1" />
+                    <GradientStop Color="#E6E1E1"
+                                    Offset="1.0" />
+                </LinearGradientBrush>
+            </StackLayout.Background>
+
+            <Image Source="back_arrow_graa.png" Aspect="AspectFit" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ReturnHome" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="{Binding Title}" HorizontalOptions="Center" TextColor="#082329" Padding="10, 10" FontSize="28" FontFamily="{StaticResource Slutta-Medium}"></Label>
+            <Label Text="{Binding Description}" HorizontalOptions="Center" TextColor="#082329" Padding="0,10,0,40"></Label>
+
+            <CollectionView ItemsSource="{Binding TextNodes}" ItemsLayout="VerticalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="1" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Title}"
+                                   FontFamily="{StaticResource Roboto-Medium}"
+                                   FontSize="20"
+                                   Padding="0, 0, 0, 20"
+                                   IsVisible="{Binding Title,Converter={StaticResource StringNullOrEmptyBoolConverter}}"
+                                   />
+                            <Label Text="{Binding Innertext}"
+                                   Padding="0, 0, 0, 20"
+                                   IsVisible="{Binding Innertext,Converter={StaticResource StringNullOrEmptyBoolConverter}}"
+                                   />
+                            <Frame  BackgroundColor="#EF3340"
+                                    Padding="5"
+                                    Margin="0,10"
+                                    HorizontalOptions="FillAndExpand"
+                                    CornerRadius="0"
+                                    HasShadow="False"
+                                    IsVisible="{Binding Linktext,Converter={StaticResource StringNullOrEmptyBoolConverter}}"
+                                    >
+                                <StackLayout>
+                                    <Label Text="{Binding Linktext}"
+                                           FontFamily="{StaticResource Roboto-Regular}"
+                                           HorizontalOptions="Center"
+                                           FontSize="24"
+                                           TextColor="#ffffff"
+                                           Padding="10"
+                                           IsVisible="{Binding External}"
+                                           >
+                                        <View.GestureRecognizers>
+                                            <TapGestureRecognizer                       
+                                                Command="{Binding Source={x:Reference thisPage},
+                                                          Path=LaunchUri}"
+                                                CommandParameter="{Binding Linkurl}"                        
+                                                />
+                                        </View.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="{Binding Linktext}"
+                                           FontFamily="{StaticResource Roboto-Regular}"
+                                           HorizontalOptions="Center"
+                                           FontSize="24"
+                                           TextColor="#ffffff"
+                                           Padding="10"
+                                           IsVisible="{Binding Internal}"
+                                           >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="GoToReset" NumberOfTapsRequired="1" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                    </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
