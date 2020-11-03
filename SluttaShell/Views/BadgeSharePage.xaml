@@ -5,7 +5,13 @@
              NavigationPage.HasNavigationBar="false"
              >
     <ContentPage.Content>
-        <StackLayout Padding="15,15,15,10">
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="15,35,15,10" />
+                    <On Platform="Android" Value="15,15,15,10" />
+                </OnPlatform>
+            </StackLayout.Padding>
             <Image Source="back_arrow_graa.png" Aspect="AspectFit" HorizontalOptions="Start">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="ReturnHome" NumberOfTapsRequired="1" />

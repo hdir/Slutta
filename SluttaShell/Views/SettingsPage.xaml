@@ -38,22 +38,34 @@
             </StackLayout.Background>
 
              <AbsoluteLayout>
-                 <Label Text="Profil" HorizontalOptions="Center" Padding="10, 15, 10, 10"
+                 <Label Text="Profil" HorizontalOptions="Center"
                         AbsoluteLayout.LayoutBounds=".5,0.02,100,70"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
-                        FontSize="20" FontFamily="{StaticResource Roboto-Medium}"></Label>
+                        FontSize="20" FontFamily="{StaticResource Roboto-Medium}">
+                    <Label.Padding> 
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="10,40,10,10" />
+                            <On Platform="Android" Value="10,15,10,10" />
+                        </OnPlatform>
+                    </Label.Padding>
+                 </Label>
                  <Label Text="Lagre"
                         x:Name="saveAnimated"
                         HorizontalOptions="End"
-                        Padding="10, 15, 10, 10"
                         AbsoluteLayout.LayoutBounds="1,0.02,100,70"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         FontSize="20"
                         FontFamily="{StaticResource Roboto-Regular}"
                         >
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="SaveUserSettings" NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
+                    <Label.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="10,40,10,10" />
+                            <On Platform="Android" Value="10,15,10,10" />
+                        </OnPlatform>
+                    </Label.Padding>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SaveUserSettings" NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
                  </Label>
              </AbsoluteLayout>
 
@@ -171,7 +183,47 @@
                                 <x:String>37</x:String>
                                 <x:String>38</x:String>
                                 <x:String>39</x:String>
-                                <x:String>40</x:String>
+                                <x:String>40</x:String>  
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                                <x:String>49</x:String>
+                                <x:String>50</x:String>
+                                <x:String>51</x:String>
+                                <x:String>52</x:String>
+                                <x:String>53</x:String>
+                                <x:String>54</x:String>
+                                <x:String>55</x:String>
+                                <x:String>56</x:String>
+                                <x:String>57</x:String>
+                                <x:String>58</x:String>
+                                <x:String>59</x:String>
+                                <x:String>60</x:String>
+                                <x:String>61</x:String>
+                                <x:String>62</x:String>
+                                <x:String>63</x:String>
+                                <x:String>64</x:String>
+                                <x:String>65</x:String>
+                                <x:String>66</x:String>
+                                <x:String>67</x:String>
+                                <x:String>68</x:String>
+                                <x:String>69</x:String>
+                                <x:String>70</x:String>
+                                <x:String>71</x:String>
+                                <x:String>72</x:String>
+                                <x:String>73</x:String>
+                                <x:String>74</x:String>
+                                <x:String>75</x:String>
+                                <x:String>76</x:String>
+                                <x:String>77</x:String>
+                                <x:String>78</x:String>
+                                <x:String>79</x:String>
+                                <x:String>80</x:String>
                             </Picker.Items>
                         </sluttacustoms:BorderlessPicker>
                         <Label Text="Velg antall sigaretter du røkte daglig før du bestemte deg for å slutte."
@@ -495,6 +547,46 @@
                                 <x:String>38</x:String>
                                 <x:String>39</x:String>
                                 <x:String>40</x:String>
+                                <x:String>41</x:String>
+                                <x:String>42</x:String>
+                                <x:String>43</x:String>
+                                <x:String>44</x:String>
+                                <x:String>45</x:String>
+                                <x:String>46</x:String>
+                                <x:String>47</x:String>
+                                <x:String>48</x:String>
+                                <x:String>49</x:String>
+                                <x:String>50</x:String>
+                                <x:String>51</x:String>
+                                <x:String>52</x:String>
+                                <x:String>53</x:String>
+                                <x:String>54</x:String>
+                                <x:String>55</x:String>
+                                <x:String>56</x:String>
+                                <x:String>57</x:String>
+                                <x:String>58</x:String>
+                                <x:String>59</x:String>
+                                <x:String>60</x:String>
+                                <x:String>61</x:String>
+                                <x:String>62</x:String>
+                                <x:String>63</x:String>
+                                <x:String>64</x:String>
+                                <x:String>65</x:String>
+                                <x:String>66</x:String>
+                                <x:String>67</x:String>
+                                <x:String>68</x:String>
+                                <x:String>69</x:String>
+                                <x:String>70</x:String>
+                                <x:String>71</x:String>
+                                <x:String>72</x:String>
+                                <x:String>73</x:String>
+                                <x:String>74</x:String>
+                                <x:String>75</x:String>
+                                <x:String>76</x:String>
+                                <x:String>77</x:String>
+                                <x:String>78</x:String>
+                                <x:String>79</x:String>
+                                <x:String>80</x:String>
                             </Picker.Items>
                         </sluttacustoms:BorderlessPicker>
                         <Label  Text="Velg antall snus du snuste daglig før du bestemte deg for å slutte." Scale="1" Padding="0,0,0,0"

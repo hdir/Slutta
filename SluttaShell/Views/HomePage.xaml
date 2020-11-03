@@ -93,9 +93,9 @@
                 </Grid>
 
                 <Grid x:Name="QuickMenuInnerLayout"
-                      Padding="20,0,20,4"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="CenterAndExpand"
+                      Padding="20,5,20,4"
                       HeightRequest="96">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
@@ -263,14 +263,21 @@
         <BoxView    Color="#FAF5F5"
                     HorizontalOptions="FillAndExpand"
                     WidthRequest="1000"
-                    HeightRequest="80"
-                    />
+                    >
+            <BoxView.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="iOS" Value="100" /> 
+                    <On Platform="Android" Value="80" />
+                </OnPlatform>
+            </BoxView.HeightRequest>
+        </BoxView>
         <Image      Source="sluttalogo" 
-                    AbsoluteLayout.LayoutBounds=".5,-0.03,100,100"
+                    AbsoluteLayout.LayoutBounds="{OnPlatform Android='.5,-0.03,100,100', iOS='.5,0.02,100,100'}"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
-                    ></Image>
+                    >
+        </Image>
         <Image      Source="share_red.png" Aspect="AspectFit" HorizontalOptions="End"
-                    AbsoluteLayout.LayoutBounds="1,-0.035,100,100"
+                    AbsoluteLayout.LayoutBounds="{OnPlatform Android='1,-0.035,100,100', iOS='1,0.02,100,100'}"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     >
             <Image.GestureRecognizers>
@@ -280,7 +287,7 @@
 
         <Frame
             x:Name="Popup"
-            AbsoluteLayout.LayoutBounds=".5,.3,.8,.4"
+            AbsoluteLayout.LayoutBounds="{OnPlatform Android='.5,.3,.8,.4', iOS='.5,.5,.8,.4'} "
             AbsoluteLayout.LayoutFlags="All"
             HasShadow="True"
             BorderColor="#cccccc"

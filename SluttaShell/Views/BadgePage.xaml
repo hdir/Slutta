@@ -10,7 +10,13 @@
 
     <ContentPage.Content>
 
-        <StackLayout Padding="15,15,15,10">
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="15,35,15,10" />
+                    <On Platform="Android" Value="15,15,15,10" />
+                </OnPlatform>
+            </StackLayout.Padding>
              <AbsoluteLayout>
                  <Image Source="back_arrow.png"                        
                         Aspect="AspectFit" HorizontalOptions="Start"

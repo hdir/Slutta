@@ -17,10 +17,17 @@
                 </LinearGradientBrush>
             </StackLayout.Background>
             <AbsoluteLayout>
-                <Label Text="Hjelp" HorizontalOptions="Center" Padding="10, 10, 10, 10"
+                <Label Text="Hjelp" HorizontalOptions="Center"
                         AbsoluteLayout.LayoutBounds=".5,0.02,100,60"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
-                       FontSize="20" FontFamily="{StaticResource Roboto-Medium}"></Label>
+                       FontSize="20" FontFamily="{StaticResource Roboto-Medium}">
+                    <Label.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="10,40,10,10" />
+                            <On Platform="Android" Value="10,10,10,10" />
+                        </OnPlatform>
+                    </Label.Padding>
+                </Label>
              </AbsoluteLayout>
 
             <ScrollView x:Name="HelpPageScrollView">
